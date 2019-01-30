@@ -1,0 +1,253 @@
+
+/* Variable */
+$primary: #36384c;
+$secondary: #e3bab3;
+$white: #fff;
+$desktop: 768px;
+
+// Media Query for responsiveness
+@mixin desktop {
+    @media(max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+/* Core Styles */
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    // line-height: 1.5em;
+    font-size: 15px;
+}
+
+.button {
+    background: $secondary;
+    height: 38px;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $white;
+
+    @include desktop {
+        display: block;
+        width: 100%;
+    }
+}
+
+.active {
+    font-weight: bold;
+    color: $secondary;
+}
+
+.container {
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+}
+
+ul {
+    padding: 0;
+    margin: 0; 
+}
+
+.dark {
+    background-color: $primary;
+    color: $white;
+    padding: 20px;
+}
+
+
+/* Header */
+header {
+    background-color: $primary;
+    color: $white;
+    min-height: 70px;
+    padding-top: 10px;
+    border-bottom: $secondary 3px solid;
+
+    .branding {
+        float: left;
+
+        @include desktop {
+            float: none;
+            text-align: center;
+        }
+    }
+
+    nav {
+        float: right;
+        margin-top: 20px;
+
+        @include desktop {
+            float: none;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            
+            display: inline;
+            padding: 30px 20px 0 20px;
+            // font-size: 20px;
+
+            @include desktop {
+                float: none;
+                // text-align: center
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* Showcase */
+#showcase {
+    min-height: 400px;
+    background: url('../img/showcase.jpg') no-repeat 0 -400px;
+    text-align: center;
+    color: $white; 
+
+    h1 {
+        font-size: 55px;
+        margin-top: 100px;
+
+        @include desktop {
+            margin-top: 40px;
+        }
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+/* Section Newsletter */
+section#newsletter {
+    background-color: $primary;
+    color: $white;
+    padding: 15px;
+
+    h1 {
+        float: left;
+        @include desktop {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    form {
+        float: right;
+        margin-top: 15px;
+
+        @include desktop {
+            float: none;
+            text-align: center;
+        }
+
+        input[type="email"] {
+            padding: 4px;
+            height: 25px;
+            width: 250px;
+
+            @include desktop {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+/* Section Boxes */
+section#boxes {
+    margin-top: 20px;
+
+    .box {
+        float: left;
+        width: 30%;
+        text-align: center;
+        padding: 10px;
+
+        @include desktop {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        img {
+            width: 90px;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    background-color: $primary;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    color: $white;
+
+    p {
+        color: $white;
+    }
+}
+
+/* About Us */
+#main-col {
+    float: left;
+    width: 65%;
+
+    @include desktop {
+        float: none;
+        width: 100%
+    }
+}
+
+/* Sidebar */
+aside#sidebar {
+    float: right;
+    width: 30%;
+    // margin-top: 10px;
+
+    @include desktop {
+        float: none;
+        width: 100%
+    }
+
+    .quote { 
+        @include desktop {
+            text-align: center;
+        }
+
+        input, textarea {
+            padding: 5px;
+            width: 95%;
+            margin-bottom: 5px;
+
+            @include desktop {
+                width: 90%;
+            }
+        }
+    }
+    
+}
+
+/* Services */
+.services {
+    background-color: #e6e6e6;
+    // color: $white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px #ccc solid;
+}
